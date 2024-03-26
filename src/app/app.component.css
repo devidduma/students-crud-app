@@ -1,0 +1,12 @@
+.flex-center-row {
+  display: flex;
+  align-items: center; /*horizontal centering*/
+  justify-content: center; /*vertical centering*/
+  flex-direction: row; /*keep the h3 above the textbox*/
+
+  width: 100%;
+}
+
+.row-element {
+  margin: 10px;
+}

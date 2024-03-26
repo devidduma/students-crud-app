@@ -1,13 +1,25 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import {MatToolbar} from "@angular/material/toolbar";
+import {MatButton, MatIconButton} from "@angular/material/button";
+import {MatIcon} from "@angular/material/icon";
+import {MatDialog} from "@angular/material/dialog";
+import {AddEditComponent} from "./add-edit/add-edit.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MatToolbar, MatIconButton, MatIcon, MatButton],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'students-crud-app';
+  title = 'crud-app';
+
+  constructor(private _dialog: MatDialog) {}
+
+  openAddEditEmpForm() {
+    this._dialog.open(AddEditComponent);
+  }
+
 }
