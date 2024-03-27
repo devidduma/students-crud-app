@@ -10,7 +10,10 @@ import {
   MatDateRangeInput,
   MatDateRangePicker
 } from "@angular/material/datepicker";
-import {provideNativeDateAdapter} from "@angular/material/core";
+import {MatOption, provideNativeDateAdapter} from "@angular/material/core";
+import {MatRadioButton, MatRadioGroup} from "@angular/material/radio";
+import {MatSelect} from "@angular/material/select";
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-add-edit',
@@ -28,12 +31,27 @@ import {provideNativeDateAdapter} from "@angular/material/core";
     MatDatepickerToggle,
     MatHint,
     MatDateRangeInput,
-    MatDateRangePicker
+    MatDateRangePicker,
+    MatRadioButton,
+    MatRadioGroup,
+    MatSelect,
+    MatOption,
+    NgForOf
   ],
   templateUrl: './add-edit.component.html',
   styleUrl: './add-edit.component.css',
   providers: [provideNativeDateAdapter()]
 })
 export class AddEditComponent {
+  academicLevel: string[] = [
+    "Bachelor of Science (BSc)",
+    "Master of Science (MSc)",
+    "Doctorate of Philosophy (PhD)"
+  ]
 
+  courseOfStudy: string[] = [
+    "Computer Engineering",
+    "Electrical Engineering",
+    "Architecture"
+  ]
 }
