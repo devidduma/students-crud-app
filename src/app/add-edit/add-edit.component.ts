@@ -14,6 +14,9 @@ import {MatOption, provideNativeDateAdapter} from "@angular/material/core";
 import {MatRadioButton, MatRadioGroup} from "@angular/material/radio";
 import {MatSelect} from "@angular/material/select";
 import {NgForOf} from "@angular/common";
+import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
+import {EmployeeService} from "../services/employee.service";
+import {DialogRef} from "@angular/cdk/dialog";
 
 @Component({
   selector: 'app-add-edit',
@@ -36,13 +39,16 @@ import {NgForOf} from "@angular/common";
     MatRadioGroup,
     MatSelect,
     MatOption,
-    NgForOf
+    NgForOf,
+    ReactiveFormsModule
   ],
   templateUrl: './add-edit.component.html',
   styleUrl: './add-edit.component.css',
   providers: [provideNativeDateAdapter()]
 })
 export class AddEditComponent {
+  form: FormGroup;
+
   academicLevel: string[] = [
     "Bachelor of Science (BSc)",
     "Master of Science (MSc)",
@@ -54,4 +60,32 @@ export class AddEditComponent {
     "Electrical Engineering",
     "Architecture"
   ]
+
+  constructor(private _fb: FormBuilder, private _empService: EmployeeService, private _dialogRef: DialogRef<AddEditComponent>) {
+    this.form = this._fb.group({
+        firstName: "",
+        lastName: "",
+        email: "",
+        birthday: "",
+        gender: "",
+        academicLevel: "",
+        courseOfStudy: ""
+      }
+    );
+  }
+
+  onFormSubmit() {
+    if(this.form.valid) {
+      this._empService.addEmployee(this.form.value).subscribe({
+        next: (val: any) => {
+          alert("Employee added successfully!")
+        },
+        error: (err: any) => {
+          console.error(err);
+        }
+      });
+    }
+  }
+
+
 }
