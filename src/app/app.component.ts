@@ -18,7 +18,7 @@ export class AppComponent {
 
   constructor(private _dialog: MatDialog) {}
 
-  openAddEditEmpForm() {
+  openAddEditStudForm() {
     this._dialog.open(AddEditComponent);
   }
 

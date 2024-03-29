@@ -15,7 +15,7 @@ import {MatRadioButton, MatRadioGroup} from "@angular/material/radio";
 import {MatSelect} from "@angular/material/select";
 import {NgForOf} from "@angular/common";
 import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
-import {EmployeeService} from "../services/employee.service";
+import {StudentsService} from "../services/students.service";
 import {DialogRef} from "@angular/cdk/dialog";
 
 @Component({
@@ -61,7 +61,7 @@ export class AddEditComponent {
     "Architecture"
   ]
 
-  constructor(private _fb: FormBuilder, private _empService: EmployeeService, private _dialogRef: DialogRef<AddEditComponent>) {
+  constructor(private _fb: FormBuilder, private _studService: StudentsService, private _dialogRef: DialogRef<AddEditComponent>) {
     this.form = this._fb.group({
         firstName: "",
         lastName: "",
@@ -76,9 +76,9 @@ export class AddEditComponent {
 
   onFormSubmit() {
     if(this.form.valid) {
-      this._empService.addEmployee(this.form.value).subscribe({
+      this._studService.addStudent(this.form.value).subscribe({
         next: (val: any) => {
-          alert("Employee added successfully!")
+          alert("Student added successfully!")
         },
         error: (err: any) => {
           console.error(err);
