@@ -15,6 +15,8 @@ import {StudentsService} from "../services/students.service";
 import {DatePipe} from "@angular/common";
 import {MatIconButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
+import {MatDialog} from "@angular/material/dialog";
+import {AddEditComponent} from "../add-edit/add-edit.component";
 
 @Component({
   selector: 'app-show-data',
@@ -51,7 +53,7 @@ export class ShowDataComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private _stuService: StudentsService) {}
+  constructor(private _stuService: StudentsService, private _dialog: MatDialog) {}
 
   ngOnInit() {
     this.getStudentList();
@@ -88,5 +90,20 @@ export class ShowDataComponent implements OnInit {
         console.log(err);
       }
     })
+  }
+
+  openEditForm(data: any) {
+    const dialogRef = this._dialog.open(AddEditComponent, {
+      data: data
+    });
+
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if(val) {
+          this.getStudentList();
+        }
+      }
+    });
+
   }
 }

@@ -1,16 +1,6 @@
 {
   "students": [
     {
-      "id": "ca09",
-      "firstName": "Devid",
-      "lastName": "Duma",
-      "email": "devidduma@hotmail.com",
-      "birthday": "1996-05-04T22:00:00.000Z",
-      "gender": "male",
-      "academicLevel": "Master of Science (MSc)",
-      "courseOfStudy": "Computer Engineering"
-    },
-    {
       "id": "6da1",
       "firstName": "New",
       "lastName": "Student",
@@ -21,24 +11,24 @@
       "courseOfStudy": "Computer Engineering"
     },
     {
-      "id": "1182",
-      "firstName": "Test",
+      "firstName": "Testtt",
       "lastName": "Test",
-      "email": "testtest@gmail.com",
+      "email": "testest@gmail.com",
       "birthday": "1996-05-04T22:00:00.000Z",
       "gender": "female",
       "academicLevel": "Master of Science (MSc)",
-      "courseOfStudy": "Computer Engineering"
+      "courseOfStudy": "Computer Engineering",
+      "id": "1182"
     },
     {
-      "id": "a3b1",
-      "firstName": "Test",
+      "firstName": "Testt",
       "lastName": "Test",
       "email": "test565@gmail.com",
       "birthday": "1996-05-04T22:00:00.000Z",
       "gender": "male",
       "academicLevel": "Master of Science (MSc)",
-      "courseOfStudy": "Computer Engineering"
+      "courseOfStudy": "Computer Engineering",
+      "id": "a3b1"
     },
     {
       "id": "0517",
@@ -49,6 +39,16 @@
       "gender": "male",
       "academicLevel": "Master of Science (MSc)",
       "courseOfStudy": "Electrical Engineering"
+    },
+    {
+      "firstName": "Devid",
+      "lastName": "Duma",
+      "email": "devidduma@hotmail.com",
+      "birthday": "1996-05-04T22:00:00.000Z",
+      "gender": "male",
+      "academicLevel": "Master of Science (MSc)",
+      "courseOfStudy": "Computer Engineering",
+      "id": "727c"
     }
   ]
 }

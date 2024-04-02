@@ -1,6 +1,12 @@
-import {Component, Input, ViewChild} from '@angular/core';
-import {MatDialogActions, MatDialogContent, MatDialogRef, MatDialogTitle} from "@angular/material/dialog";
-import {MatButton} from "@angular/material/button";
+import {Component, Inject, Input, OnInit, ViewChild} from '@angular/core';
+import {
+  MAT_DIALOG_DATA,
+  MatDialogActions, MatDialogClose,
+  MatDialogContent,
+  MatDialogRef,
+  MatDialogTitle
+} from "@angular/material/dialog";
+import {MatButton, MatIconButton} from "@angular/material/button";
 import {MatFormField, MatHint, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {
@@ -39,13 +45,15 @@ import {StudentsService} from "../services/students.service";
     MatSelect,
     MatOption,
     NgForOf,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconButton,
+    MatDialogClose
   ],
   templateUrl: './add-edit.component.html',
   styleUrl: './add-edit.component.css',
   providers: [provideNativeDateAdapter()]
 })
-export class AddEditComponent {
+export class AddEditComponent implements OnInit {
   form: FormGroup;
 
   academicLevel: string[] = [
@@ -60,7 +68,8 @@ export class AddEditComponent {
     "Architecture"
   ]
 
-  constructor(private _fb: FormBuilder, private _studService: StudentsService, protected _dialogRef: MatDialogRef<AddEditComponent>) {
+  constructor(private _fb: FormBuilder, private _studService: StudentsService, private _dialogRef: MatDialogRef<AddEditComponent>,
+              @Inject(MAT_DIALOG_DATA) protected data: any) {
     this.form = this._fb.group({
         firstName: "",
         lastName: "",
@@ -73,16 +82,31 @@ export class AddEditComponent {
     );
   }
 
+  ngOnInit() {
+    this.form.patchValue(this.data);
+  }
+
   onFormSubmit() {
     if(this.form.valid) {
-      this._studService.addStudent(this.form.value).subscribe({
-        next: (val: any) => {
-          this._dialogRef.close(true);
-        },
-        error: (err: any) => {
-          console.error(err);
-        }
-      });
+      if(this.data) {
+        this._studService.updateStudent(this.data.id, this.form.value).subscribe({
+          next: (val: any) => {
+            this._dialogRef.close(true);
+          },
+          error: (err: any) => {
+            console.error(err);
+          }
+        });
+      } else {
+        this._studService.addStudent(this.form.value).subscribe({
+          next: (val: any) => {
+            this._dialogRef.close(true);
+          },
+          error: (err: any) => {
+            console.error(err);
+          }
+        });
+      }
     }
   }
 }
