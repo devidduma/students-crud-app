@@ -60,7 +60,7 @@ export class AddEditComponent {
     "Architecture"
   ]
 
-  constructor(private _fb: FormBuilder, private _studService: StudentsService, private _dialogRef: MatDialogRef<AddEditComponent>) {
+  constructor(private _fb: FormBuilder, private _studService: StudentsService, protected _dialogRef: MatDialogRef<AddEditComponent>) {
     this.form = this._fb.group({
         firstName: "",
         lastName: "",
