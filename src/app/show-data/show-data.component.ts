@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {
   MatCell, MatCellDef,
   MatColumnDef,
@@ -12,6 +12,7 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {StudentsService} from "../services/students.service";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-show-data',
@@ -33,12 +34,13 @@ import {StudentsService} from "../services/students.service";
     MatHeaderRowDef,
     MatPaginator,
     MatLabel,
-    MatSortHeader
+    MatSortHeader,
+    DatePipe
   ],
   templateUrl: './show-data.component.html',
   styleUrl: './show-data.component.css'
 })
-export class ShowDataComponent {
+export class ShowDataComponent implements OnInit {
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'birthday', 'gender', 'academicLevel', 'courseOfStudy'];
   dataSource!: MatTableDataSource<any>;
 
@@ -63,7 +65,9 @@ export class ShowDataComponent {
   getStudentList() {
     this._stuService.getStudentList().subscribe({
       next: (res) => {
-        console.log(res);
+        this.dataSource = new MatTableDataSource(res);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
       },
       error: (err) => {
         console.log(err);

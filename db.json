@@ -19,6 +19,56 @@
       "gender": "male",
       "academicLevel": "Master of Science (MSc)",
       "courseOfStudy": "Computer Engineering"
+    },
+    {
+      "id": "ca09",
+      "firstName": "Devid",
+      "lastName": "Duma",
+      "email": "devidduma@hotmail.com",
+      "birthday": "1996-05-04T22:00:00.000Z",
+      "gender": "male",
+      "academicLevel": "Master of Science (MSc)",
+      "courseOfStudy": "Computer Engineering"
+    },
+    {
+      "id": "fb1b",
+      "firstName": "Test",
+      "lastName": "Test",
+      "email": "test@gmail.com",
+      "birthday": "1996-05-04T22:00:00.000Z",
+      "gender": "male",
+      "academicLevel": "Master of Science (MSc)",
+      "courseOfStudy": "Computer Engineering"
+    },
+    {
+      "id": "6da1",
+      "firstName": "New",
+      "lastName": "Student",
+      "email": "newstudent@gmail.com",
+      "birthday": "1996-05-04T22:00:00.000Z",
+      "gender": "male",
+      "academicLevel": "Master of Science (MSc)",
+      "courseOfStudy": "Computer Engineering"
+    },
+    {
+      "id": "1182",
+      "firstName": "Test",
+      "lastName": "Test",
+      "email": "testtest@gmail.com",
+      "birthday": "1996-05-04T22:00:00.000Z",
+      "gender": "female",
+      "academicLevel": "Master of Science (MSc)",
+      "courseOfStudy": "Computer Engineering"
+    },
+    {
+      "id": "b677",
+      "firstName": "Test",
+      "lastName": "Test",
+      "email": "devidd@gmail.com",
+      "birthday": "1996-05-04T22:00:00.000Z",
+      "gender": "male",
+      "academicLevel": "Master of Science (MSc)",
+      "courseOfStudy": "Computer Engineering"
     }
   ]
 }
