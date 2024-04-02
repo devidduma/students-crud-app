@@ -1,40 +1,10 @@
 {
   "students": [
     {
-      "id": "4d4d",
-      "firstName": "Test",
-      "lastName": "Test",
-      "email": "test@gmail.com",
-      "birthday": "1996-05-04T22:00:00.000Z",
-      "gender": "male",
-      "academicLevel": "Master of Science (MSc)",
-      "courseOfStudy": "Computer Engineering"
-    },
-    {
-      "id": "dbd7",
-      "firstName": "Devid",
-      "lastName": "Duma",
-      "email": "dduma@opgenius.com",
-      "birthday": "1996-05-04T22:00:00.000Z",
-      "gender": "male",
-      "academicLevel": "Master of Science (MSc)",
-      "courseOfStudy": "Computer Engineering"
-    },
-    {
       "id": "ca09",
       "firstName": "Devid",
       "lastName": "Duma",
       "email": "devidduma@hotmail.com",
-      "birthday": "1996-05-04T22:00:00.000Z",
-      "gender": "male",
-      "academicLevel": "Master of Science (MSc)",
-      "courseOfStudy": "Computer Engineering"
-    },
-    {
-      "id": "fb1b",
-      "firstName": "Test",
-      "lastName": "Test",
-      "email": "test@gmail.com",
       "birthday": "1996-05-04T22:00:00.000Z",
       "gender": "male",
       "academicLevel": "Master of Science (MSc)",
@@ -61,14 +31,24 @@
       "courseOfStudy": "Computer Engineering"
     },
     {
-      "id": "b677",
+      "id": "a3b1",
       "firstName": "Test",
       "lastName": "Test",
-      "email": "devidd@gmail.com",
+      "email": "test565@gmail.com",
       "birthday": "1996-05-04T22:00:00.000Z",
       "gender": "male",
       "academicLevel": "Master of Science (MSc)",
       "courseOfStudy": "Computer Engineering"
+    },
+    {
+      "id": "0517",
+      "firstName": "Test",
+      "lastName": "Test",
+      "email": "devtest@gmail.com",
+      "birthday": "1996-05-04T22:00:00.000Z",
+      "gender": "male",
+      "academicLevel": "Master of Science (MSc)",
+      "courseOfStudy": "Electrical Engineering"
     }
   ]
 }

@@ -16,4 +16,8 @@ export class StudentsService {
   getStudentList(): Observable<any> {
     return this._http.get("http://localhost:3000/students");
   }
+
+  deleteStudent(id: number): Observable<any> {
+    return this._http.delete(`http://localhost:3000/students/${id}`);
+  }
 }

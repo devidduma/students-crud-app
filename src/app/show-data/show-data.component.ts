@@ -13,6 +13,8 @@ import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {StudentsService} from "../services/students.service";
 import {DatePipe} from "@angular/common";
+import {MatIconButton} from "@angular/material/button";
+import {MatIcon} from "@angular/material/icon";
 
 @Component({
   selector: 'app-show-data',
@@ -35,13 +37,15 @@ import {DatePipe} from "@angular/common";
     MatPaginator,
     MatLabel,
     MatSortHeader,
-    DatePipe
+    DatePipe,
+    MatIconButton,
+    MatIcon
   ],
   templateUrl: './show-data.component.html',
   styleUrl: './show-data.component.css'
 })
 export class ShowDataComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'birthday', 'gender', 'academicLevel', 'courseOfStudy'];
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'birthday', 'gender', 'academicLevel', 'courseOfStudy', "action"];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -68,6 +72,17 @@ export class ShowDataComponent implements OnInit {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    })
+  }
+
+  deleteStudent(id: number) {
+    this._stuService.deleteStudent(id).subscribe({
+      next: (res) => {
+        this.getStudentList();
       },
       error: (err) => {
         console.log(err);

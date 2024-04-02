@@ -1,5 +1,5 @@
 import {Component, Input, ViewChild} from '@angular/core';
-import {MatDialogActions, MatDialogContent, MatDialogTitle} from "@angular/material/dialog";
+import {MatDialogActions, MatDialogContent, MatDialogRef, MatDialogTitle} from "@angular/material/dialog";
 import {MatButton} from "@angular/material/button";
 import {MatFormField, MatHint, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
@@ -16,8 +16,6 @@ import {MatSelect} from "@angular/material/select";
 import {NgForOf} from "@angular/common";
 import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {StudentsService} from "../services/students.service";
-import {DialogRef} from "@angular/cdk/dialog";
-import {ShowDataComponent} from "../show-data/show-data.component";
 
 @Component({
   selector: 'app-add-edit',
@@ -62,7 +60,7 @@ export class AddEditComponent {
     "Architecture"
   ]
 
-  constructor(private _fb: FormBuilder, private _studService: StudentsService, private _dialogRef: DialogRef<AddEditComponent>) {
+  constructor(private _fb: FormBuilder, private _studService: StudentsService, private _dialogRef: MatDialogRef<AddEditComponent>) {
     this.form = this._fb.group({
         firstName: "",
         lastName: "",
@@ -79,7 +77,7 @@ export class AddEditComponent {
     if(this.form.valid) {
       this._studService.addStudent(this.form.value).subscribe({
         next: (val: any) => {
-          this._dialogRef.close();
+          this._dialogRef.close(true);
         },
         error: (err: any) => {
           console.error(err);

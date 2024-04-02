@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {MatToolbar} from "@angular/material/toolbar";
 import {MatButton, MatIconButton} from "@angular/material/button";
@@ -17,9 +17,19 @@ import {ShowDataComponent} from "./show-data/show-data.component";
 export class AppComponent {
   title = 'crud-app';
 
+  @ViewChild(ShowDataComponent)
+  showData!: ShowDataComponent;
+
   constructor(private _dialog: MatDialog) {}
 
   openAddEditStudForm() {
-    this._dialog.open(AddEditComponent);
+    const dialogRef = this._dialog.open(AddEditComponent);
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if(val) {
+          this.showData.getStudentList();
+        }
+      }
+    });
   }
 }
