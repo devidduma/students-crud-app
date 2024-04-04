@@ -1,27 +1,24 @@
-# StudentsCrudApp
+# Students Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
+Each university needs a management system for students. We build a CRUD application to create, read, update and delete data of students.
+Our software suggests a way to digitalize and automate the management process of student data in a typical university faculty.
 
-## Development server
+It is necessary that the new system will manage to provide faster interaction with the patients/customers through a well defined web interface. For this reason, we use Angular framework and Angular Material component library to build a good web interface and modify components.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Demonstration
 
-## Code scaffolding
+| Read: Dashboard view                                        |
+|-------------------------------------------------------------|
+| <img src="./src/assets/1-dashboard-view.PNG" width="360px"> |
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+| Create: Add student form                                      | Student added successfully                                              |
+|---------------------------------------------------------------|-------------------------------------------------------------------------|
+| <img src="./src/assets/2-add-student-form.PNG" width="360px"> | <img src="./src/assets/3-student-added-successfully.PNG" width="360px"> |
 
-## Build
+| Update: Update email field of student                           | Email field updated successfully                               |
+|-----------------------------------------------------------------|----------------------------------------------------------------|
+| <img src="./src/assets/4-update-email-field.PNG" width="360px"> | <img src="./src/assets/5-update-successful.PNG" width="360px"> |
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+| Delete: Student deleted successfully                                      |
+|---------------------------------------------------------------------------|
+| <img src="./src/assets/6-student-deleted-successfully.PNG" width="360px"> |
