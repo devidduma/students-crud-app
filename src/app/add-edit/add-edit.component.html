@@ -1,0 +1,65 @@
+<div mat-dialog-title>
+  <h1>Student Form</h1>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+
+  <div mat-dialog-content class="content">
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput type="text" placeholder="Example" formControlName="firstName">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Example" formControlName="lastName">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Example" formControlName="email">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Birthday</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="birthday">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-radio-group aria-label="Select an option" formControlName="gender">
+        <mat-label><b>Gender</b></mat-label>
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+        <mat-radio-button value="others">Others</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Academic Level</mat-label>
+        <mat-select formControlName="academicLevel">
+          <mat-option *ngFor="let val of academicLevel" [value]="val">{{val}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Course of Study</mat-label>
+        <mat-select formControlName="courseOfStudy">
+          <mat-option *ngFor="let val of courseOfStudy" [value]="val">{{val}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div mat-dialog-actions class="flex-center-row">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">{{data ? "Update" : "Save"}}</button>
+  </div>
+
+</form>

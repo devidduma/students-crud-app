@@ -1,0 +1,44 @@
+{
+  "students": [
+    {
+      "firstName": "Best",
+      "lastName": "Student",
+      "email": "beststudent@gmail.com",
+      "birthday": "1994-03-10T22:00:00.000Z",
+      "gender": "female",
+      "academicLevel": "Master of Science (MSc)",
+      "courseOfStudy": "Computer Engineering",
+      "id": "01"
+    },
+    {
+      "firstName": "Another",
+      "lastName": "Student",
+      "email": "anotherstudent@gmail.com",
+      "birthday": "2003-09-14T22:00:00.000Z",
+      "gender": "female",
+      "academicLevel": "Master of Science (MSc)",
+      "courseOfStudy": "Architecture",
+      "id": "02"
+    },
+    {
+      "firstName": "Master",
+      "lastName": "Student",
+      "email": "masterstudent@gmail.com",
+      "birthday": "2001-09-15T22:00:00.000Z",
+      "gender": "male",
+      "academicLevel": "Master of Science (MSc)",
+      "courseOfStudy": "Electrical Engineering",
+      "id": "03"
+    },
+    {
+      "firstName": "Friendly",
+      "lastName": "Student",
+      "email": "friendlystudent@gmail.com",
+      "birthday": "1993-10-17T22:00:00.000Z",
+      "gender": "male",
+      "academicLevel": "Master of Science (MSc)",
+      "courseOfStudy": "Electrical Engineering",
+      "id": "04"
+    }
+  ]
+}
